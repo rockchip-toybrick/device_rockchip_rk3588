@@ -1,0 +1,6 @@
+<ports>
+	<port display="2" input="usb-xhci-hcd.9.auto-1.4/input0" />
+	<port display="2" input="usb-fc800000.usb-1.4/input0" />
+	<port display="3" input="usb-xhci-hcd.9.auto-1.1/input3" />
+	<port display="3" input="usb-fc800000.usb-1.1/input3" />
+</ports>
