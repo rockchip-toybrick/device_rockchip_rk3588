@@ -57,6 +57,10 @@ PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.reserved_plane_name=Esmart3-win0
 PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.env_xml_path=/vendor/etc/HwComposerEnv-multidisplay.xml
 PRODUCT_PROPERTY_OVERRIDES += persist.automotive.evs.mode=1
 
+# Use FUSE passthrough
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.fuse.passthrough.enable=true
+
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/HwComposerEnv-multidisplay.xml:vendor/etc/HwComposerEnv-multidisplay.xml
 
 LOCAL_AUDIO_PRODUCT_COPY_FILES ?= \
