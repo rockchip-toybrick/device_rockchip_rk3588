@@ -29,7 +29,7 @@ include packages/services/Car/cpp/evs/sampleDriver/sepolicy/evsdriver.mk
 $(call inherit-product, device/rockchip/rk3588/device.mk)
 $(call inherit-product, device/rockchip/common/device.mk)
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
-
+$(call inherit-product, packages/apps/Camera360/camera360_etc.mk)
 DEVICE_MANIFEST_FILE := device/rockchip/rk3588/rk3588m_car/manifest.xml
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/../overlay
 PRODUCT_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -53,11 +53,11 @@ PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.compose_policy=0
 PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.device.primary=DSI
 PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.device.extend=HDMI-A,eDP
 PRODUCT_PROPERTY_OVERRIDES += sys.mouse.presentation=1
-#PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.reserved_plane_name=Esmart3-win0
-#PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.env_xml_path=/vendor/etc/HwComposerEnv-multidisplay.xml
+PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.reserved_plane_name=Esmart3-win0
+PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.env_xml_path=/vendor/etc/HwComposerEnv-multidisplay.xml
 PRODUCT_PROPERTY_OVERRIDES += persist.automotive.evs.mode=1
 
-#PRODUCT_COPY_FILES += $(LOCAL_PATH)/HwComposerEnv-multidisplay.xml:vendor/etc/HwComposerEnv-multidisplay.xml
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/HwComposerEnv-multidisplay.xml:vendor/etc/HwComposerEnv-multidisplay.xml
 
 LOCAL_AUDIO_PRODUCT_COPY_FILES ?= \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
