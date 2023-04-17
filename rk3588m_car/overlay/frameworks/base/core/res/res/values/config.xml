@@ -40,4 +40,12 @@
          suggestions to TimeDetector service. -->
     <bool name="config_enableGnssTimeUpdateService">false</bool>
 
+    <string-array translatable="false" name="config_tether_usb_regexs">
+         <item>"usb\\d"</item>
+	 <item>"rndis\\d"</item>
+    </string-array>
+
+    <!-- Regex of wired ethernet ifaces -->
+    <string translatable="false" name="config_ethernet_iface_regex">eth\\d|usb\\d</string>
+
 </resources>
