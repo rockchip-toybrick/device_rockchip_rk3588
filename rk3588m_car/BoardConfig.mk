@@ -40,7 +40,7 @@ endif
 
 PRODUCT_UBOOT_CONFIG := rk3588
 PRODUCT_KERNEL_DTS := rk3588-vehicle-evb-v20
-PRODUCT_KERNEL_CONFIG := rockchip_defconfig android-11.config sdio_wifi_cywdhd.config rk3588_reverse.config
+PRODUCT_KERNEL_CONFIG := rockchip_defconfig android-11.config sdio_wifi_cywdhd.config
 BOARD_GSENSOR_MXC6655XA_SUPPORT := true
 BOARD_CAMERA_SUPPORT_EXT := true
 BOARD_HS_ETHERNET := true
