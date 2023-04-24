@@ -89,6 +89,11 @@ PRODUCT_PACKAGES += android.hardware.automotive.evs@1.1-sample \
        android.frameworks.automotive.display@1.0-service \
        android.automotive.evs.manager@1.1
 
+ENABLE_CAMERA_SERVICE := true
+USE_CAMERA_V4L2_HAL := true
+PRODUCT_PACKAGES += camera.v4l2
+PRODUCT_PROPERTY_OVERRIDES += ro.hardware.camera=v4l2
+
 # build evs_app
 PRODUCT_PACKAGES += evs_app
 PRODUCT_PACKAGES += CarEvsCameraPreviewApp
