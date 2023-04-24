@@ -102,4 +102,13 @@
     <!-- Enable profile user assignment per each CarOccupantZone for per display android user
           assignments. This feature is still experimental. -->
     <bool name="enableProfileUserAssignmentForMultiDisplay" translatable="false">true</bool>
+
+    <!-- A name of a camera device that provides the rearview through EVS service -->
+    <string name="config_evsRearviewCameraId" translatable="false">/dev/video0</string>
+
+    <!-- The camera Activity name for EVS, if defined, the Activity will be launched by
+         CarEvsService. -->
+    <string name="config_evsCameraActivity" translatable="false">com.google.android.car.evs/.CarEvsCameraPreviewActivity</string>
+
+
 </resources>

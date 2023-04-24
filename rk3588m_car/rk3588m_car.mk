@@ -91,3 +91,4 @@ PRODUCT_PACKAGES += android.hardware.automotive.evs@1.1-sample \
 
 # build evs_app
 PRODUCT_PACKAGES += evs_app
+PRODUCT_PACKAGES += CarEvsCameraPreviewApp
