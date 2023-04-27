@@ -23,9 +23,7 @@ PRODUCT_DTBO_TEMPLATE := $(LOCAL_PATH)/dt-overlay.in
 include device/rockchip/common/build/rockchip/DynamicPartitions.mk
 include device/rockchip/rk3588/rk3588m_car/BoardConfig.mk
 include device/rockchip/common/BoardConfig.mk
-# add evs sepolicy
-include packages/services/Car/cpp/evs/sampleDriver/sepolicy/evsdriver.mk
-	
+
 $(call inherit-product, device/rockchip/rk3588/device.mk)
 $(call inherit-product, device/rockchip/common/device.mk)
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
@@ -54,7 +52,6 @@ PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.device.extend=HDMI-A,eDP
 PRODUCT_PROPERTY_OVERRIDES += sys.mouse.presentation=1
 PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.reserved_plane_name=Esmart3-win0
 PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.env_xml_path=/vendor/etc/HwComposerEnv-multidisplay.xml
-PRODUCT_PROPERTY_OVERRIDES += persist.automotive.evs.mode=1
 
 # Use FUSE passthrough
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -86,17 +83,18 @@ PRODUCT_PACKAGES += gps.$(TARGET_BOARD_HARDWARE) \
        android.hardware.gnss@2.0-impl-techtotop \
        android.hardware.gnss@2.0-service-techtotop
 
-# support EVS HAL
-PRODUCT_PACKAGES += android.hardware.automotive.evs@1.1-sample \
-       libevsconfigmanager \
-       android.frameworks.automotive.display@1.0-service \
-       android.automotive.evs.manager@1.1
-
 ENABLE_CAMERA_SERVICE := true
 USE_CAMERA_V4L2_HAL := true
 PRODUCT_PACKAGES += camera.v4l2
 PRODUCT_PROPERTY_OVERRIDES += ro.hardware.camera=v4l2
 
-# build evs_app
-PRODUCT_PACKAGES += evs_app
-PRODUCT_PACKAGES += CarEvsCameraPreviewApp
+# Support EVS HAL
+ENABLE_EVS_SAMPLE := true
+LOCAL_EVS_PROPERTIES := persist.automotive.evs.mode=1
+ENABLE_CAREVSSERVICE_SAMPLE := true
+ENABLE_REAR_VIEW_CAMERA_SAMPLE := true
+
+ifeq ($(ENABLE_EVS_SAMPLE), true)
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/evs/evs_app_config.json:system/etc/automotive/evs/evs_override.json
+endif
