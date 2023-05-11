@@ -2,7 +2,7 @@
 on property:persist.sys.camera360=1
     chmod 0666 /dev/video*
 
-#on property:persist.sys.camera360=2
+on property:persist.sys.camera360=2
     chmod 0660 /dev/video*
 
 service camera360 /system/bin/camera360.sh
