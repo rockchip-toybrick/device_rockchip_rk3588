@@ -20,6 +20,7 @@ libm.so
 libnativehelper.so
 libnativewindow.so
 libneuralnetworks.so nopreload
+libOpenCL.so
 libOpenMAXAL.so
 libOpenSLES.so
 libRS.so
