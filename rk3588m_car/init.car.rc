@@ -14,3 +14,11 @@ on property:sys.boot_completed=1
     setprop vendor.hwc.reserved_plane_name NULL
     #start camera360
 
+on boot
+    # backlight
+    chown system system /sys/class/backlight/backlight/brightness
+    chown system system /sys/class/backlight/dp2lvds_backlight0/brightness
+    chown system system /sys/class/backlight/dp2lvds_backlight1/brightness
+    chown system system /sys/class/backlight/dsi2lvds_backlight1/brightness
+    chown system system /sys/class/backlight/edp2lvds_backlight0/brightness
+    chown system system /sys/class/backlight/edp2lvds_backlight1/brightness
