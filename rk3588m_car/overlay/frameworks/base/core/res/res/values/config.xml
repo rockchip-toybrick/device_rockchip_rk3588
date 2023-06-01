@@ -25,8 +25,6 @@
     -->
     <integer name="config_longPressOnPowerBehavior">1</integer>
 
-    <bool name="config_single_volume">true</bool>
-
     <!-- Disable lockscreen sound effect -->
     <integer name="def_lockscreen_sounds_enabled">0</integer>
 
