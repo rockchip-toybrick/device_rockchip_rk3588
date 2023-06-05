@@ -23,56 +23,50 @@
 -->
 <carAudioConfiguration version="2">
     <zones>
-        <zone name="primary zone" isPrimary="true">
+        <zone name="primary zone" isPrimary="true" occupantZoneId="0">
             <volumeGroups>
                 <group>
                     <device address="bus0_media_out">
                         <context context="music"/>
-                        <context context="navigation"/>
-                        <context context="voice_command"/>
-                        <context context="call_ring"/>
-                        <context context="call"/>
-                        <context context="alarm"/>
-                        <context context="notification"/>
-                        <context context="system_sound"/>
-                        <context context="emergency"/>
-                        <context context="safety"/>
-                        <context context="vehicle_status"/>
                         <context context="announcement"/>
                     </device>
+                    <device address="bus6_notification_out">
+                        <context context="notification"/>
+                    </device>
                 </group>
-            </volumeGroups>
-			<displays>
-                <display port="1"/>
-           </displays>
-        </zone>
-        <zone name="rear seat zone 1" audioZoneId="1">
-            <volumeGroups>
                 <group>
                     <device address="bus1_navigation_out">
-						<context context="music"/>
                         <context context="navigation"/>
+                    </device>
+                    <device address="bus2_voice_command_out">
                         <context context="voice_command"/>
-                        <context context="call_ring"/>
+                    </device>
+                </group>
+                <group>
+                    <device address="bus4_call_out">
                         <context context="call"/>
+                    </device>
+                    <device address="bus3_call_ring_out">
+                        <context context="call_ring"/>
+                    </device>
+                </group>
+                <group>
+                    <device address="bus5_alarm_out">
                         <context context="alarm"/>
-                        <context context="notification"/>
+                    </device>
+                    <device address="bus7_system_sound_out">
                         <context context="system_sound"/>
                         <context context="emergency"/>
                         <context context="safety"/>
                         <context context="vehicle_status"/>
-                        <context context="announcement"/>
                     </device>
                 </group>
             </volumeGroups>
-			<displays>
-                <display port="0"/>
-            </displays>
         </zone>
-		<zone name="rear seat zone 2"  audioZoneId="2">
+        <zone name="rear seat zone 1" audioZoneId="1" occupantZoneId="1">
             <volumeGroups>
                 <group>
-                    <device address="bus2_voice_command_out">
+                    <device address="bus100_audio_zone_1">
                         <context context="music"/>
                         <context context="navigation"/>
                         <context context="voice_command"/>
@@ -88,9 +82,26 @@
                     </device>
                 </group>
             </volumeGroups>
-			<displays>
-                <display port="2"/>
-           </displays>
+        </zone>
+        <zone name="rear seat zone 2"  audioZoneId="2" occupantZoneId="2">
+            <volumeGroups>
+                <group>
+                    <device address="bus200_audio_zone_2">
+                        <context context="music"/>
+                        <context context="navigation"/>
+                        <context context="voice_command"/>
+                        <context context="call_ring"/>
+                        <context context="call"/>
+                        <context context="alarm"/>
+                        <context context="notification"/>
+                        <context context="system_sound"/>
+                        <context context="emergency"/>
+                        <context context="safety"/>
+                        <context context="vehicle_status"/>
+                        <context context="announcement"/>
+                    </device>
+                </group>
+            </volumeGroups>
         </zone>
     </zones>
 </carAudioConfiguration>
