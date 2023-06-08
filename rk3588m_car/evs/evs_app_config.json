@@ -10,11 +10,6 @@
       "displayPort" : 0,
       "frontRange" : 100,
       "rearRange" : 100
-    },
-    {
-      "displayPort" : 1,
-      "frontRange" : 100,
-      "rearRange" : 100
     }
   ],
   "graphic" : {
