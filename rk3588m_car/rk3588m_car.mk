@@ -27,7 +27,7 @@ include device/rockchip/common/BoardConfig.mk
 $(call inherit-product, device/rockchip/rk3588/device.mk)
 $(call inherit-product, device/rockchip/common/device.mk)
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
-$(call inherit-product, packages/apps/Camera360/camera360_etc.mk)
+
 DEVICE_MANIFEST_FILE := device/rockchip/rk3588/rk3588m_car/manifest.xml
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/../overlay
 PRODUCT_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
