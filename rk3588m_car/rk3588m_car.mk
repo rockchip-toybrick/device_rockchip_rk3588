@@ -54,10 +54,6 @@ PRODUCT_PROPERTY_OVERRIDES += sys.mouse.presentation=1
 
 PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.env_xml_path=/vendor/etc/HwComposerEnv-multidisplay.xml
 
-# Use FUSE passthrough
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.fuse.passthrough.enable=true
-
 ifeq ($(strip $(PRODUCT_KERNEL_DTS)), rk3588-vehicle-evb-v21)
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/HwComposerEnv-four-multidisplay.xml:vendor/etc/HwComposerEnv-multidisplay.xml
 else

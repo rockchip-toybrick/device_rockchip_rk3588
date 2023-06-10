@@ -82,6 +82,10 @@ ifeq ($(strip $(USE_PRODUCT_HDCP2_HDMI_FW)), true)
         $(LOCAL_PATH)/hdcp2_hdmi.fw:vendor/firmware/hdcp2_hdmi.fw
 endif
 
+# Use FUSE passthrough
+PRODUCT_PRODUCT_PROPERTIES += \
+	persist.sys.fuse.passthrough.enable=true
+
 #
 # add Rockchip properties here
 #
