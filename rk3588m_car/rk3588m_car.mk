@@ -59,10 +59,12 @@ ifeq ($(strip $(PRODUCT_KERNEL_DTS)), rk3588-vehicle-evb-v21)
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/HwComposerEnv-four-multidisplay.xml:vendor/etc/HwComposerEnv-multidisplay.xml
 
 PRODUCT_PROPERTY_OVERRIDES += persist.vendor.rockchip.evs.cam=MAX96712-TXD
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/evs/evs_configuration_v21.xml:$(TARGET_COPY_OUT_VENDOR)/etc/automotive/evs/evs_configuration_override.xml
 else
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/HwComposerEnv-multidisplay.xml:vendor/etc/HwComposerEnv-multidisplay.xml
 
 PRODUCT_PROPERTY_OVERRIDES += persist.vendor.rockchip.evs.cam=NVP6188-AHD
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/evs/evs_configuration_v20.xml:$(TARGET_COPY_OUT_VENDOR)/etc/automotive/evs/evs_configuration_override.xml
 endif
 
 LOCAL_AUDIO_PRODUCT_COPY_FILES ?= \
