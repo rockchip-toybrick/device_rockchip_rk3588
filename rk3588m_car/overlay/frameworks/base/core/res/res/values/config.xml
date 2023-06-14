@@ -46,4 +46,8 @@
     <!-- Regex of wired ethernet ifaces -->
     <string translatable="false" name="config_ethernet_iface_regex">eth\\d|usb\\d</string>
 
+    <!-- Screen brightness used to dim the screen when the user activity
+         timeout expires.  May be less than the minimum allowed brightness setting
+         that can be set by the user. mini brightness=1+254*0.1=26 -->
+    <item name="config_screenBrightnessDimFloat" format="float" type="dimen">0.1</item>
 </resources>
