@@ -25,6 +25,9 @@
     -->
     <integer name="config_longPressOnPowerBehavior">1</integer>
 
+    <!--  volume handle in extent controller -->
+    <bool name="config_handleVolumeKeysInWindowManager">true</bool>
+
     <!-- Disable lockscreen sound effect -->
     <integer name="def_lockscreen_sounds_enabled">0</integer>
 
