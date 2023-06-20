@@ -17,7 +17,7 @@ include device/rockchip/rk3588/BoardConfig.mk
 BUILD_WITH_GO_OPT := false
 
 # AB image definition
-BOARD_USES_AB_IMAGE := false
+BOARD_USES_AB_IMAGE := true
 BOARD_ROCKCHIP_VIRTUAL_AB_ENABLE := false
 
 #car flag
@@ -38,7 +38,7 @@ ifeq ($(strip $(BOARD_USES_AB_IMAGE)), true)
     TARGET_RECOVERY_FSTAB := device/rockchip/rk3588/rk3588m_car/recovery.fstab_AB
 endif
 
-PRODUCT_UBOOT_CONFIG := rk3588
+PRODUCT_UBOOT_CONFIG := rk3588-ab
 PRODUCT_KERNEL_DTS := rk3588-vehicle-evb-v20
 PRODUCT_KERNEL_CONFIG := rockchip_defconfig android-11.config sdio_wifi_cywdhd.config
 PRODUCT_KERNEL_CONFIG += rk3588_vehicle.config
