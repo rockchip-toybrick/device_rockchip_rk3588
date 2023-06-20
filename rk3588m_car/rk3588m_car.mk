@@ -86,7 +86,9 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/input-port-associations.xml:$(TARGET_COPY_OUT_VENDOR)/etc/input-port-associations.xml
 
 PRODUCT_PACKAGES += \
-     modetest
+     modetest \
+     aplay \
+     arecord
 
 # support GPS HAL
 PRODUCT_PACKAGES += gps.$(TARGET_BOARD_HARDWARE) \
