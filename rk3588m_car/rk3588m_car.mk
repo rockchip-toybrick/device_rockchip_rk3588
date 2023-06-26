@@ -73,9 +73,11 @@ LOCAL_AUDIO_PRODUCT_COPY_FILES ?= \
 
 PRODUCT_COPY_FILES += $(LOCAL_AUDIO_PRODUCT_COPY_FILES)
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init.car.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.car.rc \
+
 ifeq ($(BOARD_CAMERA360_SUPPORT),true)
 	PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/init.car.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.car.rc \
 	$(LOCAL_PATH)/camera360/camera360.sh:system/bin/camera360.sh \
 	$(LOCAL_PATH)/camera360/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 endif
