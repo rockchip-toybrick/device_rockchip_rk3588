@@ -110,3 +110,5 @@ ifeq ($(ENABLE_EVS_SAMPLE), true)
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/evs/evs_app_config.json:system/etc/automotive/evs/evs_override.json
 endif
+
+TARGET_SYSTEM_PROP += device/rockchip/rk3588/rk3588m_car/system.prop
