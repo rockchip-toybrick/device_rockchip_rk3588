@@ -25,6 +25,7 @@ include device/rockchip/rk3588/rk3588m_car/BoardConfig.mk
 include device/rockchip/common/BoardConfig.mk
 
 $(call inherit-product, packages/services/Car/cpp/evs/apps/evs_etc.mk)
+$(call inherit-product, packages/apps/Camera360/camera360_etc.mk)
 $(call inherit-product, device/rockchip/rk3588/device.mk)
 $(call inherit-product, device/rockchip/common/device.mk)
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
@@ -81,9 +82,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.car.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.car.rc \
 
 ifeq ($(BOARD_CAMERA360_SUPPORT),true)
-	PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/camera360/camera360.sh:system/bin/camera360.sh \
-	$(LOCAL_PATH)/camera360/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+PRODUCT_PACKAGES += Camera360
 endif
 
 PRODUCT_COPY_FILES += \
