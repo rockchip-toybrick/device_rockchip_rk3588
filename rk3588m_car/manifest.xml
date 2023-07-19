@@ -44,7 +44,7 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <!--<hal format="hidl">
+    <hal format="hidl">
         <name>android.hardware.sensors</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -52,7 +52,7 @@
             <name>ISensors</name>
             <instance>default</instance>
         </interface>
-    </hal>-->
+    </hal>
     <kernel target-level="6"/>
 </manifest>
 
