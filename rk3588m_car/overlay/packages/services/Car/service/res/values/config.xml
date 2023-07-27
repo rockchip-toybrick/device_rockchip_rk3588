@@ -30,7 +30,7 @@
           false, muting of individual volume groups is disabled, instead muting will toggle master
           mute. If this is set to true, car volume group muting is enabled and each individual
           volume group can be muted separately. -->
-    <bool name="audioUseCarVolumeGroupMuting">false</bool>
+    <bool name="audioUseCarVolumeGroupMuting">true</bool>
 
     <!--  Configuration to enable IAudioControl#onDevicesToDuckChange API to inform HAL when to
           duck. If this is set to true, the API will receive signals indicating which output devices
