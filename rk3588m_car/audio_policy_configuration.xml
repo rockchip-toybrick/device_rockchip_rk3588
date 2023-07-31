@@ -63,6 +63,7 @@
                      where each number # is the zone id number -->
                 <item>bus100_audio_zone_1</item>
                 <item>bus200_audio_zone_2</item>
+                <item>bus300_audio_zone_3</item>
                 <item>Built-In Mic</item>
                 <item>Built-In Back Mic</item>
                 <item>Echo-Reference Mic</item>
@@ -119,6 +120,11 @@
                              channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </mixPort>
                 <mixPort name="mixport_bus200_audio_zone_2" role="source">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="48000"
+                             channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                </mixPort>
+                <mixPort name="mixport_bus300_audio_zone_3" role="source">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="48000"
                              channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
@@ -245,6 +251,16 @@
                               defaultValueMB="0" stepValueMB="100"/>
                     </gains>
                 </devicePort>
+                <devicePort tagName="bus300_audio_zone_3" role="sink" type="AUDIO_DEVICE_OUT_BUS"
+                            address="bus300_audio_zone_3">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                    <gains>
+                        <gain name="" mode="AUDIO_GAIN_MODE_JOINT"
+                              minValueMB="-3200" maxValueMB="600"
+                              defaultValueMB="0" stepValueMB="100"/>
+                    </gains>
+                </devicePort>
                 <devicePort tagName="Built-In Mic" type="AUDIO_DEVICE_IN_BUILTIN_MIC" role="source"
                     address="Built-In Mic" >
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
@@ -317,6 +333,7 @@
                        sources="mixport_bus7_system_sound_out"/>
                 <route type="mix" sink="bus100_audio_zone_1" sources="mixport_bus100_audio_zone_1"/>
                 <route type="mix" sink="bus200_audio_zone_2" sources="mixport_bus200_audio_zone_2"/>
+                <route type="mix" sink="bus300_audio_zone_3" sources="mixport_bus300_audio_zone_3"/>
                 <route type="mix" sink="primary input"
                        sources="Built-In Mic,Built-In Back Mic,Echo-Reference Mic"/>
                 <route type="mix" sink="mixport_tuner0" sources="FM Tuner"/>
