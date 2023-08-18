@@ -20,10 +20,12 @@ TARGET_BOARD_PLATFORM_PRODUCT := car
 PRODUCT_SHIPPING_API_LEVEL := 31
 PRODUCT_DTBO_TEMPLATE := $(LOCAL_PATH)/dt-overlay.in
 
+-include hardware/rockchip/rvcam/rvcam_config.mk
 include device/rockchip/common/build/rockchip/DynamicPartitions.mk
 include device/rockchip/rk3588/rk3588m_car/BoardConfig.mk
 include device/rockchip/common/BoardConfig.mk
 
+$(call inherit-product-if-exists, hardware/rockchip/rvcam/rvcam_device.mk)
 $(call inherit-product, packages/services/Car/cpp/evs/apps/evs_etc.mk)
 $(call inherit-product, packages/apps/Camera360/camera360_etc.mk)
 $(call inherit-product, device/rockchip/rk3588/device.mk)
@@ -54,7 +56,7 @@ PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.device.extend=HDMI-A,eDP
 PRODUCT_PROPERTY_OVERRIDES += sys.mouse.presentation=1
 #PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.reserved_plane_name=Esmart3-win0
 
-ifeq ($(strip $(BOARD_HDMI_IN_SUPPORT), true))
+ifeq ($(strip $(BOARD_HDMI_IN_SUPPORT)), true)
 PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.enable_sideband_stream_2_mode=1
 # Sets to 1 for HDMIIN_MIPI_CSI, if set to 0 for HDMIRX
 PRODUCT_PROPERTY_OVERRIDES += vendor.tvinput.hdmiin.type=1
@@ -106,19 +108,24 @@ PRODUCT_COPY_FILES += \
 endif
 
 ENABLE_CAMERA_SERVICE := true
-USE_CAMERA_V4L2_HAL := true
-PRODUCT_PACKAGES += camera.v4l2
-PRODUCT_PROPERTY_OVERRIDES += ro.hardware.camera=v4l2
 
 # Support EVS HAL
+ifeq ($(strip $(BOARD_CAMERA_SUPPORT_AUTOMOTIVE)), true)
+# Do not use sample HAL if RVCAM package enabled
+ENABLE_EVS_SAMPLE := false
+else
 ENABLE_EVS_SAMPLE := true
+endif
+
+ifeq ($(strip $(ENABLE_EVS_SAMPLE)), true)
+
 LOCAL_EVS_PROPERTIES := persist.automotive.evs.mode=1
 ENABLE_CAREVSSERVICE_SAMPLE := true
 ENABLE_REAR_VIEW_CAMERA_SAMPLE := true
 
-ifeq ($(ENABLE_EVS_SAMPLE), true)
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/evs/evs_app_config.json:system/etc/automotive/evs/evs_override.json
+    $(LOCAL_PATH)/evs/evs_app_config.json:$(TARGET_COPY_OUT_SYSTEM)/etc/automotive/evs/config_override.json
+
 endif
 
 TARGET_VENDOR_PROP += device/rockchip/rk3588/rk3588m_car/vol.prop

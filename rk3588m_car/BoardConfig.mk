@@ -44,6 +44,7 @@ PRODUCT_KERNEL_CONFIG := rockchip_defconfig android-11.config pcie_wifi_infineon
 PRODUCT_KERNEL_CONFIG += rk3588_vehicle.config
 BOARD_GSENSOR_MXC6655XA_SUPPORT := true
 BOARD_CAMERA_SUPPORT_EXT := true
+# BOARD_CAMERA_SUPPORT_AUTOMOTIVE := true
 BOARD_HS_ETHERNET := true
 BOARD_CAMERA360_SUPPORT := true
 BOARD_HAS_GPS := true
