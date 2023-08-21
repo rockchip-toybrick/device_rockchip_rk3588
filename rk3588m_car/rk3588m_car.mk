@@ -60,7 +60,7 @@ PRODUCT_PROPERTY_OVERRIDES += ro.config.media_vol_default=5
 
 PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.env_xml_path=/vendor/etc/HwComposerEnv-multidisplay.xml
 
-ifeq ($(strip $(PRODUCT_KERNEL_DTS)), rk3588-vehicle-evb-v21)
+ifneq (,$(filter rk3588-vehicle-evb-v21 rk3588-vehicle-evb-v22,$(PRODUCT_KERNEL_DTS)))
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/HwComposerEnv-four-multidisplay.xml:vendor/etc/HwComposerEnv-multidisplay.xml
 
 PRODUCT_PROPERTY_OVERRIDES += persist.vendor.rockchip.evs.cam=MAX96712-TXD
