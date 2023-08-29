@@ -21,5 +21,7 @@
 #define BTA_DM_COD {0x5A, 0x04, 0x06} 
 #define BTA_AV_SINK_INCLUDED TRUE
 
+#define ESCO_DATA_PATH_PCM 6
+
 #endif
 
