@@ -22,6 +22,7 @@ on boot
     chown system system /sys/class/backlight/dsi2lvds_backlight1/brightness
     chown system system /sys/class/backlight/edp2lvds_backlight0/brightness
     chown system system /sys/class/backlight/edp2lvds_backlight1/brightness
+    chown gps system /dev/ttyS7
 
     #touchscreen after serdes
     insmod /vendor/lib/modules/gt1x-ts.ko

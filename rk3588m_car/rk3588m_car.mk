@@ -94,9 +94,14 @@ PRODUCT_PACKAGES += \
      arecord
 
 # support GPS HAL
+ifeq ($(BOARD_HAS_GPS),true)
 PRODUCT_PACKAGES += gps.$(TARGET_BOARD_HARDWARE) \
        android.hardware.gnss@2.0-impl-techtotop \
        android.hardware.gnss@2.0-service-techtotop
+
+PRODUCT_COPY_FILES += \
+	hardware/techtotop/gps/tdgnss.conf:$(TARGET_COPY_OUT_VENDOR)/etc/tdgnss.conf
+endif
 
 ENABLE_CAMERA_SERVICE := true
 USE_CAMERA_V4L2_HAL := true
