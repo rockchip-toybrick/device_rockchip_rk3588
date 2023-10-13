@@ -18,7 +18,7 @@
 #define _BDROID_BUILDCFG_H
 
 #define BTM_DEF_LOCAL_NAME	"rk3588"
-#define BTA_DM_COD {0x5A, 0x04, 0x06} 
+#define BTA_DM_COD {0x34, 0x04, 0x08}
 #define BTA_AV_SINK_INCLUDED TRUE
 
 #define ESCO_DATA_PATH_PCM 6
