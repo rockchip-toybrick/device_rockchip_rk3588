@@ -29,7 +29,7 @@
     <bool name="config_handleVolumeKeysInWindowManager">true</bool>
 
     <!--  volume adjust in hal -->
-    <bool name="config_useFixedVolume">true</bool>
+    <!--  <bool name="config_useFixedVolume">true</bool> -->
 
     <!-- Disable lockscreen sound effect -->
     <integer name="def_lockscreen_sounds_enabled">0</integer>
