@@ -53,10 +53,6 @@ PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.device.primary=DSI
 PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.device.extend=HDMI-A,eDP
 PRODUCT_PROPERTY_OVERRIDES += sys.mouse.presentation=1
 #PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.reserved_plane_name=Esmart3-win0
-PRODUCT_PROPERTY_OVERRIDES += ro.config.vc_call_vol_default=5
-PRODUCT_PROPERTY_OVERRIDES += ro.config.alarm_vol_default=5
-PRODUCT_PROPERTY_OVERRIDES += ro.config.system_vol_default=5
-PRODUCT_PROPERTY_OVERRIDES += ro.config.media_vol_default=5
 
 PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.env_xml_path=/vendor/etc/HwComposerEnv-multidisplay.xml
 
@@ -119,4 +115,4 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/evs/evs_app_config.json:system/etc/automotive/evs/evs_override.json
 endif
 
-TARGET_SYSTEM_PROP += device/rockchip/rk3588/rk3588m_car/system.prop
+TARGET_VENDOR_PROP += device/rockchip/rk3588/rk3588m_car/vol.prop
