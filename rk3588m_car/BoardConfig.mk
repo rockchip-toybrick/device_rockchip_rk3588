@@ -49,3 +49,7 @@ BOARD_CAMERA360_SUPPORT := true
 BOARD_HAS_GPS := true
 
 #DISABLE_CAR_PRODUCT_CONFIG_OVERLAY := true
+
+# If wants to adapt MIPI CSI input to TV Input HAL
+# set this variable to ture
+# BOARD_HDMI_IN_SUPPORT := true
