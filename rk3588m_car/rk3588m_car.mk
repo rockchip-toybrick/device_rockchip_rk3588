@@ -94,6 +94,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
      modetest \
+     amixer \
      aplay \
      arecord
 
