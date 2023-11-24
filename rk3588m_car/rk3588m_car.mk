@@ -98,6 +98,11 @@ PRODUCT_PACKAGES += \
      aplay \
      arecord
 
+PRODUCT_PROPERTY_OVERRIDES += ro.hardware.audiocontrol=primary.rk30board
+
+PRODUCT_PACKAGES += \
+     audiocontrol.primary.$(TARGET_BOARD_HARDWARE)
+
 # support GPS HAL
 ifeq ($(BOARD_HAS_GPS),true)
 PRODUCT_PACKAGES += gps.$(TARGET_BOARD_HARDWARE) \
