@@ -68,12 +68,20 @@ ifneq (,$(filter rk3588-vehicle-evb-v21 rk3588-vehicle-evb-v22,$(PRODUCT_KERNEL_
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/HwComposerEnv-four-multidisplay.xml:vendor/etc/HwComposerEnv-multidisplay.xml
 
 PRODUCT_PROPERTY_OVERRIDES += persist.vendor.rockchip.evs.cam=MAX96712-TXD
+ifeq ($(strip $(BOARD_CAMERA_SUPPORT_AUTOMOTIVE)), true)
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/evs/evs_configuration_v21_rvcam.xml:$(TARGET_COPY_OUT_VENDOR)/etc/automotive/evs/evs_configuration_override.xml
+else
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/evs/evs_configuration_v21.xml:$(TARGET_COPY_OUT_VENDOR)/etc/automotive/evs/evs_configuration_override.xml
+endif
 else
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/HwComposerEnv-multidisplay.xml:vendor/etc/HwComposerEnv-multidisplay.xml
 
 PRODUCT_PROPERTY_OVERRIDES += persist.vendor.rockchip.evs.cam=NVP6188-AHD
+ifeq ($(strip $(BOARD_CAMERA_SUPPORT_AUTOMOTIVE)), true)
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/evs/evs_configuration_v20_rvcam.xml:$(TARGET_COPY_OUT_VENDOR)/etc/automotive/evs/evs_configuration_override.xml
+else
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/evs/evs_configuration_v20.xml:$(TARGET_COPY_OUT_VENDOR)/etc/automotive/evs/evs_configuration_override.xml
+endif
 endif
 
 LOCAL_AUDIO_PRODUCT_COPY_FILES ?= \
@@ -119,6 +127,9 @@ ENABLE_CAMERA_SERVICE := true
 ifeq ($(strip $(BOARD_CAMERA_SUPPORT_AUTOMOTIVE)), true)
 # Do not use sample HAL if RVCAM package enabled
 ENABLE_EVS_SAMPLE := false
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/evs/evs_app_config_rvcam.json:$(TARGET_COPY_OUT_SYSTEM)/etc/automotive/evs/config_override.json
 else
 ENABLE_EVS_SAMPLE := true
 endif
