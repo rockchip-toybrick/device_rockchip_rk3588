@@ -38,7 +38,7 @@ ifeq ($(strip $(BOARD_USES_AB_IMAGE)), true)
     TARGET_RECOVERY_FSTAB := device/rockchip/rk3588/rk3588m_car/recovery.fstab_AB
 endif
 
-PRODUCT_UBOOT_CONFIG := rk3588-ab
+PRODUCT_UBOOT_CONFIG := rk3588-ab-car
 PRODUCT_KERNEL_DTS := rk3588-vehicle-evb-v22
 PRODUCT_KERNEL_CONFIG := rockchip_defconfig android-11.config pcie_wifi_infineon.config
 PRODUCT_KERNEL_CONFIG += rk3588_vehicle.config
