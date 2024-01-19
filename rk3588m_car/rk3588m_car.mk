@@ -87,7 +87,7 @@ endif
 
 LOCAL_AUDIO_PRODUCT_COPY_FILES ?= \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml 
+    frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
 PRODUCT_COPY_FILES += $(LOCAL_AUDIO_PRODUCT_COPY_FILES)
 
@@ -147,3 +147,6 @@ PRODUCT_COPY_FILES += \
 endif
 
 TARGET_VENDOR_PROP += device/rockchip/rk3588/rk3588m_car/vol.prop
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/config_three_fingers.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/config_three_fingers.xml
