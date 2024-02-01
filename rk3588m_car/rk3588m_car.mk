@@ -54,6 +54,7 @@ PRODUCT_PROPERTY_OVERRIDES += persist.bt.power.down=true
 PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.device.primary=DSI
 PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.device.extend=HDMI-A,eDP
 PRODUCT_PROPERTY_OVERRIDES += sys.mouse.presentation=1
+PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.video_buf_cache_max_size=8294399
 #PRODUCT_PROPERTY_OVERRIDES += vendor.hwc.reserved_plane_name=Esmart3-win0
 
 ifeq ($(strip $(BOARD_HDMI_IN_SUPPORT)), true)
