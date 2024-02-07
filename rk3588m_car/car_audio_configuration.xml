@@ -54,6 +54,10 @@
                     </device>
                 </group>
             </volumeGroups>
+            <inputDevices>
+                <inputDevice address="tuner0"/>
+                <inputDevice address="Built-In Mic"/>
+            </inputDevices>
         </zone>
         <zone name="front seat zone 1" audioZoneId="1" occupantZoneId="1">
             <volumeGroups>
@@ -74,6 +78,10 @@
                     </device>
                 </group>
             </volumeGroups>
+            <inputDevices>
+                <inputDevice address="Built-In Back Mic"/>
+                <inputDevice address="Echo-Reference Mic"/>
+            </inputDevices>
         </zone>
         <zone name="rear seat zone 1"  audioZoneId="2" occupantZoneId="2">
             <volumeGroups>
@@ -94,6 +102,9 @@
                     </device>
                 </group>
             </volumeGroups>
+            <inputDevices>
+                <inputDevice address="input_bus_tone_zone_0"/>
+            </inputDevices>
         </zone>
         <zone name="rear seat zone 2" audioZoneId="3" occupantZoneId="3">
             <volumeGroups>
@@ -114,6 +125,9 @@
                     </device>
                 </group>
             </volumeGroups>
+            <inputDevices>
+                <inputDevice address="input_bus_tone_zone_1"/>
+            </inputDevices>
         </zone>
     </zones>
 </carAudioConfiguration>
