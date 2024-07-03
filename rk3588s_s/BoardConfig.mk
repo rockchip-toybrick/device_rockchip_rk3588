@@ -16,6 +16,8 @@
 include device/rockchip/rk3588/BoardConfig.mk
 BUILD_WITH_GO_OPT := false
 
+TARGET_BOARD_CPU := RK3588S
+
 # AB image definition
 BOARD_USES_AB_IMAGE := false
 BOARD_ROCKCHIP_VIRTUAL_AB_ENABLE := false

@@ -2,8 +2,6 @@
 # Copyright (c) 2020 Rockchip Electronics Co., Ltd
 #
 
-PRODUCT_VENDOR_PROPERTIES += ro.soc.model=RK3588
-
 # GPU Profiling
 PRODUCT_VENDOR_PROPERTIES += graphics.gpu.profiler.support=true
 
