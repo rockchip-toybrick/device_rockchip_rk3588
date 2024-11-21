@@ -1,4 +1,6 @@
 ro.config.vc_call_vol_default=5
 ro.config.alarm_vol_default=5
 ro.config.system_vol_default=5
-ro.config.media_vol_default=12
+ro.config.media_vol_default=25
+ro.config.media_vol_steps=38
+
