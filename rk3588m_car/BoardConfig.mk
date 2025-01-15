@@ -41,7 +41,7 @@ ifeq ($(strip $(BOARD_USES_AB_IMAGE)), true)
 endif
 
 PRODUCT_UBOOT_CONFIG := rk3588-ab-car
-PRODUCT_KERNEL_DTS := rk3588-vehicle-evb-v22
+PRODUCT_KERNEL_DTS := rk3588-vehicle-evb-v23
 PRODUCT_KERNEL_CONFIG := rockchip_defconfig android-11.config pcie_wifi_infineon.config
 PRODUCT_KERNEL_CONFIG += rk3588_vehicle.config
 BOARD_GSENSOR_MXC6655XA_SUPPORT := true
